@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lark/pkg/common/xjwt"
+	"dqq/go/basic/pkg/common/xjwt"
 )
 
 func main() {

@@ -1,19 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"lark/pkg/common/xgin"
+import "fmt"
 
-	"github.com/gin-gonic/gin"
-)
-
-func main() {
-	engine := xgin.NewGinServer()
-	engine.Engine.GET("hellow", hello)
-	engine.Run(9166)
+func g(arg any) {
+	a, _ := arg.(string)
+	fmt.Println(a)
 }
 
-func hello(c *gin.Context) {
-	fmt.Println("访问了hello这个api")
-	c.SecureJSON(0, "访问成功")
+func main() {
+	a := 3.14
+	g(a)
+
+	m := map[int]bool{}
+	value := m[1]
+	fmt.Printf("%t\n", value)
+
+	ch := make(chan int, 1)
+	close(ch)
+	v := <-ch
+	fmt.Printf("%d\n", v)
 }
